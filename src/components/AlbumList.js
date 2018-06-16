@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 import axios from 'axios';
 import AlbumDetail from './AlbumDetail';
 
@@ -23,9 +23,9 @@ export default class AlbumList extends React.Component {
     console.log(this.state); //first time album list is rendered as an empty array
     //and after the http response albumlist re-renders again showing us the entire list of album
     return(
-      <View>
+      <ScrollView>
         {this.renderAlbums()}
-      </View>
+      </ScrollView>
     );
   }
 }
