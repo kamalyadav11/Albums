@@ -1,6 +1,7 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import axios from 'axios';
+import AlbumDetail from './AlbumDetail';
 
 export default class AlbumList extends React.Component {
   state = {
@@ -13,7 +14,9 @@ export default class AlbumList extends React.Component {
   }
 
   renderAlbums() {
-    return this.state.albums.map(album => <Text>{album.title}</Text>);
+    return this.state.albums.map(album => 
+    <AlbumDetail key={album.title} album={album} /> //key should be unique for each element so we choosing album.title because its unique in each case
+    );
   }
 
   render() {
